@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your cart | Green Mountain Food Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Green Mountain<small>Food Services</small></a>
+    <div class="nav">
+      <a class="nav-btn" id="ordersLink" href="orders.html" hidden>Previous orders</a>
+      <button class="nav-btn" id="acctBtn">Sign in</button>
+      <button class="cart-btn" id="openCart" aria-label="Open cart">Cart <span id="count">0</span></button>
+    </div>
+  </div>
+  <nav class="menu" aria-label="Main"><div class="wrap">
+    <a href="products.html">Shop</a>
+    <a href="quickorder.html">Quick order</a>
+    <a href="delivery.html">Delivery &amp; pickup</a>
+    <a href="help.html">Help</a>
+  </div></nav>
+</header>
+<main class="wrap page"><h1 class="page-title">Your cart</h1><div style="height:18px"></div><div id="cartPage"></div></main>
+<footer>
+  <div class="wrap foot">
+    <div><b class="fbrand">Green Mountain Food Services</b><p id="footInfo"></p></div>
+    <div><h3>Shop</h3><a href="products.html">All products</a><a href="quickorder.html">Quick order</a><a href="cart.html">Your cart</a></div>
+    <div><h3>Customer service</h3><a href="delivery.html">Delivery &amp; pickup</a><a href="help.html">Help &amp; contact</a></div>
+  </div>
+  <div class="wrap copy">&copy; <span id="yr"></span> Green Mountain Food Services</div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer-head"><h2>Your cart</h2><button class="x" id="closeCart" aria-label="Close cart">&times;</button></div>
+  <div class="items" id="items"></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+    <a class="btn dark block" id="fullCart" href="cart.html">Show full cart</a>
+    <a class="btn block disabled" id="checkoutBtn" href="checkout.html" aria-disabled="true">Check out</a>
+  </div>
+</aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="panel" id="panel"></div></div>
+<button class="total-pin" id="totalPin" aria-label="Open cart"><span>Your total</span><b id="pinTotal">$0.00</b></button>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

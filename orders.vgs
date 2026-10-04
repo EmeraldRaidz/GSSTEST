@@ -1,0 +1,544 @@
+window.VGS = `
+# ============================================================
+#  orders.vgs  -  Green Mountain Food Services catalog file
+# ============================================================
+#  The website's JavaScript reads this file and builds every page from it.
+#  - Lines starting with # are comments.
+#  - [business] holds store details (Help page, Delivery page, checkout, footer).
+#  - [product] starts a new product. Copy a block to add more.
+#    "code" is the item number customers can search for (keep it unique).
+#  - [slide] blocks make the picture carousel on the home page (warehouse, trucks, products).
+#    "image:" uses a picture name from [images]. Blank shows a colored placeholder.
+#  - "categories" in [business] sets the order the category buttons appear in.
+#  - Each line is  key: value   (spec and hours can repeat; use | between parts).
+#  - IMAGES: put picture files in the Web/images/ folder.
+#    Products: type the file name right in the product, e.g.  image: maple-syrup.jpg
+#    Slides: use a name from [images] below, e.g.  image: truckPic
+#    A full link (https://...) also works. Leave it blank and the emoji is shown instead.
+#  - Keep the first line (window.VGS = and the backtick) and the last line (backtick and ;)
+#    exactly as they are. Do not type backticks, backslashes or dollar-brace in the text.
+# ============================================================
+
+[images]
+# Home page carousel pictures, listed as   name: file
+# Put the picture files in the folder below (Web/images/), then change a file name here
+# and the website uses the new file everywhere that name is used.
+# Slides point at a name with  image: truckPic  (names are not case sensitive).
+# Product pictures are set inside each [product] instead, e.g.  image: maple-syrup.jpg
+# A missing file is fine: the website shows the emoji or colored placeholder instead.
+# Any picture type works: .jpg .jpeg .png .webp .gif .svg .avif .bmp - just type the real
+# file name, e.g.  truckPic: truck.png  (iPhone .heic and .tiff files will not show in most
+# browsers - save them as .jpg or .png first).
+image_folder: images/
+# Home page carousel
+warehousePic: wear1.jpg
+truckPic: truck1.jpg
+productsPic: wear2.webp
+
+[business]
+name: Green Mountain Food Services
+address: 4 Smith St
+city: Whitehall, NY 12887
+phone: (518) 499-9101
+tollfree: (800) 323-5524
+# Please confirm this is the right help email before going live
+email: mo@gmfservice.com
+delivery: eastern New York, Vermont, New Hampshire and Massachusetts
+# Delivery pricing (placeholders - set your real numbers)
+delivery_fee: 25.00
+free_delivery_over: 300.00
+min_delivery_order: 100.00
+pickup_note: Check in at the front office and we will bring your order out.
+timezone: America/New_York
+# Category buttons appear in this order. A category used by a product but missing here is added at the end.
+categories: Frozen Foods | Dry Goods | Paper Products | Beverages | Dairy & Refrigerated | Condiments & Sauces | Spices & Seasonings | Canned & Jarred | Grains & Baking | Oils & Syrups | Cleaning Supplies | Disposables & Packaging
+# The Whitehall Market banner under the menu on every page. Set market_show: no to hide it.
+# market_address is searched on Google Maps. Put the market's exact street address here.
+# market_link (optional) overrides it with a full Google Maps link, e.g. a "Share" link from Maps.
+market_show: yes
+market_title: Whitehall Market
+market_text: Check out our new state-of-the-art market in Whitehall.
+market_address: Whitehall Market, Whitehall, NY 12887
+market_link:
+market_link_text: Get directions
+# Map pin (approximate, adjust if needed)
+lat: 43.5545
+lon: -73.4040
+hours: Mon | 08:00 | 17:00
+hours: Tue | 08:00 | 17:00
+hours: Wed | 08:00 | 17:00
+hours: Thu | 08:00 | 17:00
+hours: Fri | 08:00 | 17:00
+hours: Sat | 08:00 | 17:00
+hours: Sun | closed
+
+[product]
+id: 1
+code: GM-1001
+name: Vermont Maple Syrup, Grade A
+category: Oils & Syrups
+size: 1 gallon jug
+each: 64.00
+case_qty: 4
+case_price: 240.00
+emoji: 🍁
+color: #f3e2c4
+image: maple-syrup.jpg
+tag: Local favorite
+description: Dark, full-flavored syrup for pancakes, glazes and dressings.
+spec: Origin | Vermont, USA
+spec: Shelf life | 24 months unopened
+spec: Storage | Refrigerate after opening
+
+[product]
+id: 2
+code: GM-1002
+name: Long Grain White Rice
+category: Grains & Baking
+size: 25 lb bag
+each: 28.50
+case_qty: 4
+case_price: 108.00
+emoji: 🍚
+color: #e8edf0
+image: rice.jpg
+tag:
+description: Everyday long grain rice that cooks up fluffy and separate.
+spec: Shelf life | 24 months
+spec: Storage | Cool, dry place
+spec: Cooks to | About 75 servings per bag
+
+[product]
+id: 3
+code: GM-1003
+name: Crushed Tomatoes
+category: Canned & Jarred
+size: #10 can
+each: 7.50
+case_qty: 6
+case_price: 42.00
+emoji: 🍅
+color: #f5d5cf
+image: crushed-tomatoes.jpg
+tag:
+description: Thick crushed tomatoes for sauces, soups and braises.
+spec: Can size | #10 (about 6 lb 6 oz)
+spec: Shelf life | 24 months
+spec: Storage | Cool, dry place
+
+[product]
+id: 4
+code: GM-1004
+name: Extra Virgin Olive Oil
+category: Oils & Syrups
+size: 3 L tin
+each: 36.00
+case_qty: 4
+case_price: 136.00
+emoji: 🫒
+color: #dfe8c9
+image: olive-oil.jpg
+tag:
+description: Cold-pressed olive oil for dressings, sauteing and finishing.
+spec: Shelf life | 18 months
+spec: Storage | Away from heat and light
+spec: Container | Tin
+
+[product]
+id: 5
+code: GM-1005
+name: Buttermilk Pancake Mix
+category: Grains & Baking
+size: 10 lb bag
+each: 19.75
+case_qty: 4
+case_price: 74.00
+emoji: 🥞
+color: #f1dfc9
+image: pancake-mix.jpg
+tag: New
+description: Just-add-water mix for light, golden pancakes and waffles.
+spec: Shelf life | 12 months
+spec: Storage | Cool, dry place
+spec: Yield | About 100 pancakes per bag
+
+[product]
+id: 6
+code: GM-1006
+name: Crinkle Cut French Fries
+category: Frozen Foods
+size: 5 lb bag
+each: 11.50
+case_qty: 6
+case_price: 64.00
+emoji: 🍟
+color: #f6e7b8
+image: french-fries.jpg
+tag:
+description: Golden crinkle cut fries that hold up well in the fryer.
+spec: Storage | Keep frozen at 0°F
+spec: Cook method | Fryer or oven
+spec: Shelf life | 12 months frozen
+
+[product]
+id: 7
+code: GM-1007
+name: Breaded Chicken Tenders
+category: Frozen Foods
+size: 10 lb box
+each: 52.00
+case_qty: 2
+case_price: 98.00
+emoji: 🍗
+color: #f2dcc0
+image: chicken-tenders.jpg
+tag:
+description: Fully cooked breaded tenders, ready to heat and serve.
+spec: Storage | Keep frozen at 0°F
+spec: Cooked | Fully cooked
+spec: Shelf life | 12 months frozen
+
+[product]
+id: 8
+code: GM-1008
+name: Mixed Vegetables
+category: Frozen Foods
+size: 2.5 lb bag
+each: 6.25
+case_qty: 12
+case_price: 69.00
+emoji: 🥦
+color: #d9ebd2
+image: mixed-vegetables.jpg
+tag:
+description: Carrots, corn, peas and green beans, frozen at peak freshness.
+spec: Storage | Keep frozen at 0°F
+spec: Blend | Carrots, corn, peas, green beans
+spec: Shelf life | 18 months frozen
+
+[product]
+id: 9
+code: GM-1009
+name: Dried Pinto Beans
+category: Dry Goods
+size: 25 lb bag
+each: 24.00
+case_qty: 2
+case_price: 45.00
+emoji: 🫘
+color: #ead9c4
+image: pinto-beans.jpg
+tag:
+description: Clean, sorted pinto beans for soups, chili and sides.
+spec: Storage | Cool, dry place
+spec: Shelf life | 24 months
+spec: Prep | Soak before cooking
+
+[product]
+id: 10
+code: GM-1010
+name: Elbow Macaroni
+category: Dry Goods
+size: 10 lb box
+each: 14.50
+case_qty: 2
+case_price: 27.00
+emoji: 🍝
+color: #f4e6c3
+image: macaroni.jpg
+tag:
+description: Classic elbow pasta for mac and cheese, salads and soups.
+spec: Storage | Cool, dry place
+spec: Shelf life | 24 months
+spec: Cook time | About 8 minutes
+
+[product]
+id: 11
+code: GM-1011
+name: Granulated Sugar
+category: Dry Goods
+size: 50 lb bag
+each: 38.00
+case_qty: 2
+case_price: 72.00
+emoji: 🍬
+color: #f5ecf0
+image: sugar.jpg
+tag:
+description: Pure cane granulated sugar for baking and beverages.
+spec: Storage | Cool, dry place
+spec: Shelf life | Indefinite when dry
+spec: Type | Cane sugar
+
+[product]
+id: 12
+code: GM-1012
+name: Paper Towels
+category: Paper Products
+size: 12 roll pack
+each: 18.50
+case_qty: 4
+case_price: 68.00
+emoji: 🧻
+color: #ece8dc
+image: paper-towels.jpg
+tag:
+description: Absorbent kitchen paper towels for everyday cleanups.
+spec: Rolls | 12 per pack
+spec: Storage | Keep dry
+spec: Ply | 2-ply
+
+[product]
+id: 13
+code: GM-1013
+name: Dinner Napkins
+category: Paper Products
+size: 500 count pack
+each: 9.75
+case_qty: 6
+case_price: 55.00
+emoji: 📄
+color: #efe9e0
+image: napkins.jpg
+tag:
+description: Soft 2-ply dinner napkins for dining rooms and catering.
+spec: Count | 500 per pack
+spec: Ply | 2-ply
+spec: Storage | Keep dry
+
+[product]
+id: 14
+code: GM-1014
+name: Toilet Tissue
+category: Paper Products
+size: 80 roll case
+each: 42.00
+case_qty: 2
+case_price: 80.00
+emoji: 🧻
+color: #e8eef0
+image: toilet-tissue.jpg
+tag:
+description: Soft, quick-dissolving tissue for restrooms and facilities.
+spec: Rolls | 80 per case
+spec: Ply | 2-ply
+spec: Storage | Keep dry
+
+[product]
+id: 15
+code: GM-1015
+name: Whole Bean Coffee
+category: Beverages
+size: 5 lb bag
+each: 38.00
+case_qty: 4
+case_price: 144.00
+emoji: ☕
+color: #e6d3c0
+image: coffee.jpg
+tag:
+description: Medium roast whole bean coffee with a smooth, balanced taste.
+spec: Roast | Medium
+spec: Storage | Airtight, cool and dry
+spec: Shelf life | 9 months
+
+[product]
+id: 16
+code: GM-1016
+name: Black Tea Bags
+category: Beverages
+size: 500 count box
+each: 24.50
+case_qty: 4
+case_price: 92.00
+emoji: 🍵
+color: #dbe8d6
+image: tea.jpg
+tag:
+description: Orange pekoe tea bags for hot and iced tea service.
+spec: Count | 500 bags
+spec: Storage | Cool, dry place
+spec: Shelf life | 24 months
+
+[product]
+id: 17
+code: GM-1017
+name: Unsalted Butter
+category: Dairy & Refrigerated
+size: 1 lb block
+each: 5.60
+case_qty: 36
+case_price: 188.00
+emoji: 🧈
+color: #f8efc4
+image: butter.jpg
+tag:
+description: Grade AA unsalted butter for cooking and baking.
+spec: Storage | Refrigerate at 40°F or below
+spec: Grade | AA
+spec: Shelf life | 90 days refrigerated
+
+[product]
+id: 18
+code: GM-1018
+name: Shredded Mozzarella
+category: Dairy & Refrigerated
+size: 5 lb bag
+each: 21.00
+case_qty: 4
+case_price: 78.00
+emoji: 🧀
+color: #f9ebb8
+image: mozzarella.jpg
+tag:
+description: Low-moisture part-skim mozzarella for pizza and baked dishes.
+spec: Storage | Refrigerate at 40°F or below
+spec: Type | Low-moisture, part-skim
+spec: Shelf life | 60 days refrigerated
+
+[product]
+id: 19
+code: GM-1019
+name: Tomato Ketchup
+category: Condiments & Sauces
+size: 1 gallon jug
+each: 14.00
+case_qty: 4
+case_price: 52.00
+emoji: 🌭
+color: #f3d1cc
+image: ketchup.jpg
+tag:
+description: Thick, classic ketchup for the table and the line.
+spec: Storage | Cool, dry place; refrigerate after opening
+spec: Shelf life | 18 months
+spec: Container | Jug with pump-ready cap
+
+[product]
+id: 20
+code: GM-1020
+name: Real Mayonnaise
+category: Condiments & Sauces
+size: 1 gallon jug
+each: 17.50
+case_qty: 4
+case_price: 66.00
+emoji: 🥚
+color: #f7f0dc
+image: mayonnaise.jpg
+tag:
+description: Creamy mayonnaise for sandwiches, dressings and dips.
+spec: Storage | Refrigerate after opening
+spec: Shelf life | 12 months unopened
+spec: Container | Jug
+
+[product]
+id: 21
+code: GM-1021
+name: Kosher Salt
+category: Spices & Seasonings
+size: 3 lb box
+each: 5.75
+case_qty: 12
+case_price: 64.00
+emoji: 🧂
+color: #eceef0
+image: kosher-salt.jpg
+tag:
+description: Coarse kosher salt, the cook's choice for seasoning and curing.
+spec: Storage | Cool, dry place
+spec: Shelf life | Indefinite
+spec: Grain | Coarse
+
+[product]
+id: 22
+code: GM-1022
+name: Ground Black Pepper
+category: Spices & Seasonings
+size: 16 oz container
+each: 11.25
+case_qty: 6
+case_price: 63.00
+emoji: 🌶️
+color: #e5dad0
+image: black-pepper.jpg
+tag:
+description: Finely ground black pepper with a bold, sharp flavor.
+spec: Storage | Cool, dry place
+spec: Shelf life | 24 months
+spec: Grind | Fine
+
+[product]
+id: 23
+code: GM-1023
+name: Concentrated Dish Soap
+category: Cleaning Supplies
+size: 1 gallon jug
+each: 16.00
+case_qty: 4
+case_price: 60.00
+emoji: 🧼
+color: #d5e8f0
+image: dish-soap.jpg
+tag:
+description: Grease-cutting concentrate for hand washing pots, pans and dishes.
+spec: Use | Dilute as directed
+spec: Storage | Room temperature
+spec: Container | Jug
+
+[product]
+id: 24
+code: GM-1024
+name: Paper Takeout Containers
+category: Disposables & Packaging
+size: 50 count pack
+each: 12.50
+case_qty: 8
+case_price: 92.00
+emoji: 🥡
+color: #f0e2cf
+image: takeout-containers.jpg
+tag:
+description: Folding paper containers with fold-in lids for takeout orders.
+spec: Count | 50 per pack
+spec: Material | Paper
+spec: Storage | Keep dry
+
+[product]
+id: 25
+code: GM-1025
+name: Nitrile Gloves, Powder Free
+category: Disposables & Packaging
+size: Box of 100
+each: 9.50
+case_qty: 10
+case_price: 85.00
+emoji: 🧤
+color: #d9e3f2
+image: gloves.jpg
+tag:
+description: Powder-free nitrile gloves for food prep and cleaning.
+spec: Count | 100 per box
+spec: Sizes | Choose size when you call us
+
+[slide]
+title: Our warehouse
+text: Every order is picked and packed here in Whitehall.
+emoji: 🏭
+color: #2b5242
+image: warehousePic
+
+[slide]
+title: Our trucks
+text: Delivering across eastern New York, Vermont, New Hampshire and Massachusetts.
+emoji: 🚚
+color: #35604f
+image: truckPic
+
+[slide]
+title: Our products
+text: Pantry staples, frozen foods, paper goods and more, by the case or by the unit.
+emoji: 🥫
+color: #6b4e1f
+image: productsPic
+`;

@@ -1,0 +1,6 @@
+# Netlify settings. The site is this folder; server code lives in netlify/functions.
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
